@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Justicia para Todos | Registro Clientes</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <h1>Justicia para Todos</h1>
+    <h2>Formulario de Registro de Clientes</h2>
+
+    <form action="procesar.php" method="POST">
+
+        <fieldset>
+            <legend>Datos Personales del Cliente</legend>
+
+            <label>RUT:</label>
+            <div class="rut-container" style="display: flex; gap: 5px; align-items: center; max-width: 200px;">
+                <input type="text" id="rut" name="rut" pattern="[0-9]{7,8}" placeholder="12345678" maxlength="8" required>
+                <span>-</span>
+                <input type="text" id="dv" name="dv" pattern="[0-9kK]{1}" placeholder="K" maxlength="1" required>
+            </div>
+            <br>
+
+            <label for="nombre">Nombre:</label><br>
+            <input type="text" id="nombre" name="nombre" required><br><br>
+
+            <label for="apellido">Apellido:</label><br>
+            <input type="text" id="apellido" name="apellido" required><br><br>
+
+            <label for="email">Correo Electrónico:</label><br>
+            <input type="email" id="email" name="email" placeholder="cliente@correo.com" required><br><br>
+
+            <label for="telefono">Teléfono:</label><br>
+            <input type="tel" id="telefono" name="telefono" pattern="[0-9]{9}" placeholder="912345678" required><br><br>
+        </fieldset>
+
+        <br>
+
+        <fieldset class="seccion-direccion">
+            <legend>Dirección</legend>
+
+            <div class="grupo-campo">
+                <label for="pais">País:</label><br>
+                <input type="text" id="pais" name="pais" placeholder="Chile" required>
+            </div><br>
+
+            <div class="grupo-campo">
+                <label for="calle">Calle:</label><br>
+                <input type="text" id="calle" name="calle" placeholder="Av. Las Condes" required>
+            </div><br>
+
+            <div class="grupo-campo">
+                <label for="numero">Número:</label><br>
+                <input type="text" id="numero" name="numero" placeholder="1234" required>
+            </div><br>
+
+            <div class="grupo-campo">
+                <label for="depto-casa">Dpto. / Casa:</label><br>
+                <input type="text" id="depto-casa" name="depto-casa" placeholder="Depto 402" required>
+            </div><br>
+
+            <div class="grupo-campo">
+                <label for="codigo-postal">Código Postal:</label><br>
+                <input type="text" id="codigo-postal" name="codigo_postal" pattern="[0-9]{7}" placeholder="7500000" maxlength="7" required>
+            </div>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Información del Caso Judicial</legend>
+
+            <label for="num_caso">Número de Caso:</label><br>
+            <input type="number" id="num_caso" name="num_caso" min="1" required><br><br>
+
+            <label for="desc_caso">Descripción del Caso:</label><br>
+            <textarea id="desc_caso" name="desc_caso" rows="4" cols="50" placeholder="Antecedentes jurídicos..." required></textarea><br><br>
+
+            <label for="fecha_inicio">Fecha de Inicio del Caso:</label><br>
+            <input type="date" id="fecha_inicio" name="fecha_inicio" required><br><br>
+
+            <label for="estado_caso">Estado del Caso:</label><br>
+            <select id="estado_caso" name="estado_caso" required>
+                <option value="">Seleccione un estado</option>
+                <option value="Activo">Activo</option>
+                <option value="En proceso">En proceso</option>
+                <option value="Cerrado">Cerrado</option>
+            </select><br><br>
+
+            <label for="desc_sentencia">Descripción de Sentencia (Si aplica):</label><br>
+            <textarea id="desc_sentencia" name="desc_sentencia" rows="3" cols="50" placeholder="Sentencia dictada..."></textarea><br><br>
+
+            <label for="fecha_cierre">Fecha de Cierre (Si aplica):</label><br>
+            <input type="date" id="fecha_cierre" name="fecha_cierre">
+        </fieldset>
+
+        <br><br>
+        <input type="submit" value="Registrar Caso">
+        <input type="reset" value="Limpiar Formulario">
+
+    </form>
+</body>
+
+</html>
