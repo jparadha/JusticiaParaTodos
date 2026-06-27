@@ -1,0 +1,43 @@
+/*===================================================================
+Justicia para Todos
+Taller de Integración de Software
+
+Autor: JParadha
+Fecha: 26/06/2026
+Archivo: Justicia_Todos.mysql
+Descripcion: Estructura relacional con dos tablas (clientes y casos)
+             para permitir que un cliente posea múltiples causas.
+===================================================================*/
+
+-- Creación de la Base de Datos
+CREATE DATABASE IF NOT EXISTS justicia_todos;
+USE justicia_todos;
+
+-- 1. TABLA CLIENTES (Contiene solo los datos personales)
+CREATE TABLE IF NOT EXISTS clientes (
+    rut INT(8) NOT NULL,
+    dv CHAR(1) NOT NULL,
+    nombre VARCHAR(50) NOT NULL,
+    apellido VARCHAR(50) NOT NULL,
+    pais VARCHAR(50) NOT NULL,
+    calle VARCHAR(100) NOT NULL,
+    numero VARCHAR(10) NOT NULL,
+    depto_casa VARCHAR(50) NOT NULL,
+    codigo_postal INT(7) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    telefono VARCHAR(15) NOT NULL, -- Formato WhatsApp
+    PRIMARY KEY (rut)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- 2. TABLA CASOS (Contiene los datos judiciales y se conecta con clientes)
+CREATE TABLE IF NOT EXISTS casos (
+    num_caso INT NOT NULL, -- Identificador único del caso (PK)
+    rut_cliente INT(8) NOT NULL, -- Relación con la tabla clientes (FK)
+    desc_caso TEXT NOT NULL,
+    fecha_inicio DATE NOT NULL,
+    estado_caso ENUM('Activo', 'En proceso', 'Cerrado') NOT NULL,
+    desc_sentencia TEXT DEFAULT NULL,
+    fecha_cierre DATE DEFAULT NULL,
+    PRIMARY KEY (num_caso),
+    FOREIGN KEY (rut_cliente) REFERENCES clientes(rut) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
