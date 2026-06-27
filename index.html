@@ -17,7 +17,7 @@
         <fieldset>
             <legend>Datos Personales del Cliente</legend>
 
-            <label>RUT:</label>
+            <label for="rut">RUT:</label>
             <div class="rut-container" style="display: flex; gap: 5px; align-items: center; max-width: 200px;">
                 <input type="text" id="rut" name="rut" pattern="[0-9]{7,8}" placeholder="12345678" maxlength="8" required>
                 <span>-</span>
@@ -35,7 +35,7 @@
             <input type="email" id="email" name="email" placeholder="cliente@correo.com" required><br><br>
 
             <label for="telefono">Teléfono:</label><br>
-            <input type="tel" id="telefono" name="telefono" pattern="\+[0-9]{11,13}" placeholder="+56912345678" required><br><br>
+            <input type="tel" id="telefono" name="telefono" pattern="\+[0-9]{11,12}" placeholder="+56912345678" required><br><br>
         </fieldset>
 
         <br>
@@ -60,7 +60,7 @@
 
             <div class="grupo-campo">
                 <label for="depto-casa">Dpto. / Casa:</label><br>
-                <input type="text" id="depto-casa" name="depto-casa" placeholder="Depto 10 o Casa 10">
+                <input type="text" id="depto-casa" name="depto-casa" placeholder="Depto 10">
             </div><br>
 
             <div class="grupo-campo">
