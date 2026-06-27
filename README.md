@@ -24,6 +24,8 @@ La solución integra una interfaz de usuario (*Front-end*) restrictiva con un mo
 - **XAMPP** (Servidor local Apache y panel phpMyAdmin)
 
 ## Estructura del proyecto
+
+'''
 JUSTICIAPARATODOS/
 │
 ├── index.html               # Interfaz principal y formulario de registro
@@ -33,7 +35,7 @@ JUSTICIAPARATODOS/
 ├── css/
 │   └── estilos.css          # Hoja de estilos para la presentación visual del portal
 └── README.md                # Documentación técnica del repositorio
-
+'''
 ## Estado del proyecto
 
 🚧 **Proyecto en desarrollo (Fase de Integración Base de Datos Completada).**
